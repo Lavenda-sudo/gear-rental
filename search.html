@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Search & Filter Gear</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      padding: 30px;
+      background-color: #f1f5f9;
+    }
+
+    /* Container for the search bar */
+    .search-container {
+      background: white;
+      padding: 20px;
+      border-radius: 10px;
+      box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+      max-width: 800px;
+      margin: 0 auto;
+    }
+
+    /* Flex layout to put all search inputs side-by-side */
+    .search-form {
+      display: flex;
+      gap: 12px;
+      flex-wrap: wrap;
+    }
+
+    .search-form input,
+    .search-form select {
+      padding: 12px;
+      border: 1px solid #cbd5e1;
+      border-radius: 6px;
+      font-size: 14px;
+      flex: 1; /* Makes inputs share the row equally */
+      min-width: 160px;
+    }
+
+    .btn-search {
+      background-color: #2563eb;
+      color: white;
+      border: none;
+      padding: 12px 24px;
+      border-radius: 6px;
+      font-weight: bold;
+      cursor: pointer;
+    }
+
+    .btn-search:hover {
+      background-color: #1d4ed8;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="search-container">
+    <h2>Find Equipment to Rent</h2>
+    
+    <form class="search-form">
+      <!-- 1. Keyword search -->
+      <input type="text" placeholder="Keyword (e.g. Sony, Drill, Drone)">
+
+      <!-- 2. Category Filter -->
+      <select>
+        <option value="">All Categories</option>
+        <option value="cameras">📷 Cameras</option>
+        <option value="drones">🛸 Drones</option>
+        <option value="tools">🔨 Power Tools</option>
+        <option value="sound">🎤 Audio / Sound</option>
+      </select>
+
+      <!-- 3. Location Filter -->
+      <input type="text" placeholder="Location / Town">
+
+      <!-- 4. Submit button -->
+      <button type="submit" class="btn-search">Search</button>
+    </form>
+  </div>
+
+</body>
+</html>

@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>GearRent — Rent Cameras, Tools & Electronics</title>
+  
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background-color: #f8fafc;
+      color: #334155;
+    }
+
+    /* 1. NAVBAR */
+    .navbar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      background-color: #ffffff;
+      padding: 16px 40px;
+      box-shadow: 0 1px 3px rgba(0,0,0,0.08);
+    }
+    .logo {
+      font-size: 24px;
+      font-weight: bold;
+      color: #0f172a;
+      text-decoration: none;
+    }
+    .logo span { color: #2563eb; }
+    .btn-post {
+      background-color: #2563eb;
+      color: white;
+      padding: 10px 18px;
+      border-radius: 6px;
+      text-decoration: none;
+      font-weight: bold;
+    }
+
+    /* 2. SEARCH HERO */
+    .hero {
+      text-align: center;
+      padding: 40px 20px 20px;
+    }
+    .hero h1 {
+      font-size: 32px;
+      margin-bottom: 8px;
+      color: #0f172a;
+    }
+    .search-container {
+      background: white;
+      padding: 16px;
+      border-radius: 10px;
+      box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+      max-width: 800px;
+      margin: 20px auto;
+      display: flex;
+      gap: 10px;
+      flex-wrap: wrap;
+    }
+    .search-container input,
+    .search-container select {
+      padding: 10px;
+      border: 1px solid #cbd5e1;
+      border-radius: 6px;
+      flex: 1;
+      min-width: 150px;
+    }
+    .btn-search {
+      background-color: #2563eb;
+      color: white;
+      border: none;
+      padding: 10px 20px;
+      border-radius: 6px;
+      font-weight: bold;
+      cursor: pointer;
+    }
+
+    /* 3. GRID OF ITEMS */
+    .section-title {
+      max-width: 1000px;
+      margin: 30px auto 15px;
+      padding: 0 20px;
+    }
+    .grid-container {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 25px;
+      max-width: 1000px;
+      margin: 0 auto 50px;
+      padding: 0 20px;
+    }
+    .card {
+      background: white;
+      border: 1px solid #e2e8f0;
+      border-radius: 10px;
+      padding: 15px;
+      box-shadow: 0 2px 4px rgba(0,0,0,0.04);
+    }
+    .card img {
+      width: 100%;
+      height: 180px;
+      object-fit: cover;
+      border-radius: 8px;
+    }
+    .badge {
+      background-color: #e0f2fe;
+      color: #0369a1;
+      padding: 3px 8px;
+      border-radius: 4px;
+      font-size: 11px;
+      font-weight: bold;
+    }
+    .price {
+      font-size: 18px;
+      color: #16a34a;
+      font-weight: bold;
+      margin: 10px 0;
+    }
+    .rent-btn {
+      background-color: #2563eb;
+      color: white;
+      border: none;
+      padding: 10px;
+      width: 100%;
+      border-radius: 6px;
+      cursor: pointer;
+      font-weight: bold;
+    }
+    .rent-btn:hover { background-color: #1d4ed8; }
+  </style>
+</head>
+<body>
+
+  <!-- NAVBAR -->
+  <header class="navbar">
+    <a href="index.html" class="logo">Gear<span>Rent</span></a>
+    <a href="form.html" class="btn-post">+ List Your Gear</a>
+  </header>
+
+  <!-- SEARCH HERO -->
+  <section class="hero">
+    <h1>Don't Buy. Just Rent.</h1>
+    <p>Rent cameras, tools, and electronics from people in your city.</p>
+
+    <div class="search-container">
+      <input type="text" placeholder="What are you looking for?">
+      <select>
+        <option value="">All Categories</option>
+        <option value="cameras">📷 Cameras</option>
+        <option value="drones">🛸 Drones</option>
+        <option value="tools">🔨 Power Tools</option>
+      </select>
+      <input type="text" placeholder="Location">
+      <button class="btn-search">Search</button>
+    </div>
+  </section>
+
+  <!-- RENTAL GRID -->
+  <div class="section-title">
+    <h2>Featured Gear Nearby</h2>
+  </div>
+
+  <div class="grid-container" id="gearGrid">
+
+    <!-- Card 1 (Default) -->
+    <div class="card">
+      <img src="https://images.unsplash.com/photo-1516035069371-29a1b244cc32?w=500" alt="Camera">
+      <p><span class="badge">CAMERAS</span></p>
+      <h3>Sony A7 IV Camera</h3>
+      <p style="color: #64748b; font-size: 14px;">📍 Downtown</p>
+      <p class="price">$45 <span style="font-size: 12px; color: gray;">/ day</span></p>
+      <a href="details.html"><button class="rent-btn">Rent This Gear</button></a>
+    </div>
+
+    <!-- Card 2 (Default) -->
+    <div class="card">
+      <img src="https://images.unsplash.com/photo-1527977966376-1c8408f9f108?w=500" alt="Drone">
+      <p><span class="badge">DRONES</span></p>
+      <h3>DJI Mini 3 Pro Drone</h3>
+      <p style="color: #64748b; font-size: 14px;">📍 Westlands</p>
+      <p class="price">$35 <span style="font-size: 12px; color: gray;">/ day</span></p>
+      <a href="details.html"><button class="rent-btn">Rent This Gear</button></a>
+    </div>
+
+    <!-- Card 3 (Default) -->
+    <div class="card">
+      <img src="https://images.unsplash.com/photo-1504148455328-c376907d081c?w=500" alt="Drill">
+      <p><span class="badge">TOOLS</span></p>
+      <h3>DeWalt Cordless Drill</h3>
+      <p style="color: #64748b; font-size: 14px;">📍 Northside</p>
+      <p class="price">$15 <span style="font-size: 12px; color: gray;">/ day</span></p>
+      <a href="details.html"><button class="rent-btn">Rent This Gear</button></a>
+    </div>
+
+  </div>
+
+  <!-- JAVASCRIPT LOGIC -->
+  <script>
+    window.addEventListener('DOMContentLoaded', () => {
+      const grid = document.getElementById('gearGrid');
+      const savedItems = JSON.parse(localStorage.getItem('myGearList')) || [];
+
+      console.log('Saved items in memory:', savedItems);
+
+      savedItems.forEach(item => {
+        const newCard = document.createElement('div');
+        newCard.className = 'card';
+        newCard.innerHTML = `
+          <img src="${item.image}" alt="${item.name}">
+          <p><span class="badge">${item.category}</span></p>
+          <h3>${item.name}</h3>
+          <p style="color: #64748b; font-size: 14px;">📍 ${item.location}</p>
+          <p class="price">$${item.price} <span style="font-size: 12px; color: gray;">/ day</span></p>
+          <a href="details.html"><button class="rent-btn">Rent This Gear</button></a>
+        `;
+        grid.prepend(newCard);
+      });
+    });
+  </script>
+
+</body>
+</html>

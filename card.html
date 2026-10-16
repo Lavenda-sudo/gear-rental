@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Rental Item Card</title>
+  
+  <!-- A little bit of styling right inside the file to give it shape -->
+  <style>
+    .card {
+      border: 2px solid #ddd;
+      border-radius: 12px;
+      width: 280px;
+      padding: 15px;
+      font-family: Arial, sans-serif;
+    }
+
+    .card img {
+      width: 100%;
+      border-radius: 8px;
+    }
+
+    .badge {
+      background-color: #e0f2fe;
+      color: #0369a1;
+      padding: 4px 8px;
+      border-radius: 4px;
+      font-size: 12px;
+      font-weight: bold;
+    }
+
+    .price {
+      font-size: 20px;
+      color: #16a34a;
+      font-weight: bold;
+    }
+
+    .rent-btn {
+      background-color: #2563eb;
+      color: white;
+      border: none;
+      padding: 10px;
+      width: 100%;
+      border-radius: 6px;
+      cursor: pointer;
+      font-size: 15px;
+      margin-top: 10px;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>Testing an Item Card</h1>
+
+  <!-- THIS IS THE COMPLETE RENTAL CARD -->
+  <div class="card">
+    <img src="https://images.unsplash.com/photo-1516035069371-29a1b244cc32?w=500" alt="Sony A7 Camera">
+    
+    <p><span class="badge">CAMERA</span></p>
+    
+    <h3>Sony A7 IV Mirrorless</h3>
+    <p>📍 Downtown • 2.5 km away</p>
+    
+    <p class="price">$45 <span style="font-size: 14px; color: gray;">/ day</span></p>
+    
+    <a href="details.html">
+  <button class="rent-btn">Rent This Gear</button>
+</a>
+  </div>
+
+</body>
+</html>

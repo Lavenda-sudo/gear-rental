@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Rental Grid Test</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      padding: 30px;
+      background-color: #f8fafc;
+    }
+
+    /* THE MAGIC GRID: Arranges cards side-by-side automatically */
+    .grid-container {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 25px;
+      max-width: 1000px;
+      margin: 0 auto;
+    }
+
+    /* Individual Card Style */
+    .card {
+      background: white;
+      border: 1px solid #e2e8f0;
+      border-radius: 10px;
+      padding: 15px;
+      box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+    }
+
+    .card img {
+      width: 100%;
+      height: 180px;
+      object-fit: cover; /* Keeps images uniform without stretching */
+      border-radius: 8px;
+    }
+
+    .badge {
+      background-color: #e0f2fe;
+      color: #0369a1;
+      padding: 3px 8px;
+      border-radius: 4px;
+      font-size: 11px;
+      font-weight: bold;
+    }
+
+    .price {
+      font-size: 18px;
+      color: #16a34a;
+      font-weight: bold;
+      margin: 10px 0;
+    }
+
+    .rent-btn {
+      background-color: #2563eb;
+      color: white;
+      border: none;
+      padding: 8px;
+      width: 100%;
+      border-radius: 6px;
+      cursor: pointer;
+      font-weight: bold;
+    }
+
+    .rent-btn:hover {
+      background-color: #1d4ed8;
+    }
+  </style>
+</head>
+<body>
+
+  <h2 style="text-align: center; margin-bottom: 30px;">Featured Gear for Rent</h2>
+
+  <!-- GRID CONTAINER HOLDING 3 CARDS -->
+  <div class="grid-container">
+
+    <!-- Card 1: Camera -->
+    <div class="card">
+      <img src="https://images.unsplash.com/photo-1516035069371-29a1b244cc32?w=500" alt="Camera">
+      <p><span class="badge">CAMERA</span></p>
+      <h3>Sony A7 IV Camera</h3>
+      <p style="color: #64748b; font-size: 14px;">📍 Downtown</p>
+      <p class="price">$45 <span style="font-size: 12px; color: gray;">/ day</span></p>
+      <a href="details.html"><button class="rent-btn">Rent This</button></a>
+    </div>
+
+    <!-- Card 2: Drone -->
+    <div class="card">
+      <img src="https://images.unsplash.com/photo-1527977966376-1c8408f9f108?w=500" alt="Drone">
+      <p><span class="badge">DRONE</span></p>
+      <h3>DJI Mini 3 Pro Drone</h3>
+      <p style="color: #64748b; font-size: 14px;">📍 Westlands</p>
+      <p class="price">$35 <span style="font-size: 12px; color: gray;">/ day</span></p>
+      <a href="details.html"><button class="rent-btn">Rent This</button></a>
+    </div>
+
+    <!-- Card 3: Power Drill -->
+    <div class="card">
+      <img src="https://images.unsplash.com/photo-1504148455328-c376907d081c?w=500" alt="Power Drill">
+      <p><span class="badge">TOOLS</span></p>
+      <h3>DeWalt Cordless Drill</h3>
+      <p style="color: #64748b; font-size: 14px;">📍 Northside</p>
+      <p class="price">$15 <span style="font-size: 12px; color: gray;">/ day</span></p>
+      <a href="details.html"><button class="rent-btn">Rent This</button></a>
+    </div>
+
+  </div>
+
+</body>
+</html>
