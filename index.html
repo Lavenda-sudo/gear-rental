@@ -3,219 +3,693 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>GearRent — Rent Cameras, Tools & Electronics</title>
   
+  <!-- SEO & MARKETING META TAGS (Makes Google & WhatsApp previews look professional) -->
+  <title>GearRent — Verified Peer-to-Peer Gear & Equipment Rentals</title>
+  <meta name="description" content="Rent high-end cameras, drones, audio equipment and tools directly from verified local creators. Safe, insured, and affordable.">
+  <meta property="og:title" content="GearRent — Rent High-End Gear Near You">
+  <meta property="og:description" content="Don't buy expensive equipment for one shoot. Rent from verified creators in your city.">
+  <meta property="og:image" content="https://images.unsplash.com/photo-1512790182412-b19e6d62bc39?w=1200">
+
+  <!-- Premium Typography -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  
+  <!-- FontAwesome Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
   <style>
-    body {
-      margin: 0;
-      font-family: Arial, sans-serif;
-      background-color: #f8fafc;
-      color: #334155;
+    :root {
+      --primary: #2563eb;
+      --primary-dark: #1d4ed8;
+      --dark: #090d16;
+      --surface: #ffffff;
+      --border: #e2e8f0;
+      --text-muted: #64748b;
+      --radius: 14px;
     }
 
-    /* 1. NAVBAR */
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      font-family: 'Plus Jakarta Sans', sans-serif;
+    }
+
+    body {
+      background-color: #f8fafc;
+      color: #0f172a;
+      overflow-x: hidden;
+    }
+
+    /* TOP ANNOUNCEMENT BANNER */
+    .top-banner {
+      background: linear-gradient(90deg, #1e293b, #0f172a);
+      color: #94a3b8;
+      font-size: 13px;
+      text-align: center;
+      padding: 10px;
+      font-weight: 500;
+    }
+    .top-banner span {
+      color: #38bdf8;
+      font-weight: 700;
+    }
+
+    /* NAVIGATION */
     .navbar {
       display: flex;
       justify-content: space-between;
       align-items: center;
-      background-color: #ffffff;
-      padding: 16px 40px;
-      box-shadow: 0 1px 3px rgba(0,0,0,0.08);
+      background: rgba(255, 255, 255, 0.95);
+      backdrop-filter: blur(10px);
+      padding: 16px 6%;
+      border-bottom: 1px solid var(--border);
+      position: sticky;
+      top: 0;
+      z-index: 1000;
     }
     .logo {
       font-size: 24px;
-      font-weight: bold;
+      font-weight: 800;
+      color: var(--dark);
+      text-decoration: none;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+    .logo-badge {
+      background: #eff6ff;
+      color: var(--primary);
+      padding: 3px 8px;
+      border-radius: 6px;
+      font-size: 11px;
+      font-weight: 700;
+    }
+    .nav-right {
+      display: flex;
+      align-items: center;
+      gap: 20px;
+    }
+    .btn-earn {
       color: #0f172a;
       text-decoration: none;
+      font-weight: 600;
+      font-size: 14px;
+      display: flex;
+      align-items: center;
+      gap: 6px;
     }
-    .logo span { color: #2563eb; }
-    .btn-post {
-      background-color: #2563eb;
+    .btn-primary {
+      background: var(--primary);
       color: white;
-      padding: 10px 18px;
-      border-radius: 6px;
+      padding: 12px 22px;
+      border-radius: 10px;
+      font-weight: 700;
+      font-size: 14px;
       text-decoration: none;
-      font-weight: bold;
+      transition: all 0.2s;
+      box-shadow: 0 4px 14px rgba(37, 99, 235, 0.25);
+    }
+    .btn-primary:hover {
+      background: var(--primary-dark);
+      transform: translateY(-1px);
     }
 
-    /* 2. SEARCH HERO */
+    /* HERO SECTION */
     .hero {
+      background: radial-gradient(circle at top right, #1e293b, #090d16);
+      color: white;
+      padding: 90px 6% 120px;
       text-align: center;
-      padding: 40px 20px 20px;
+      position: relative;
+    }
+    .hero-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: rgba(255, 255, 255, 0.08);
+      border: 1px solid rgba(255, 255, 255, 0.15);
+      padding: 6px 16px;
+      border-radius: 50px;
+      font-size: 13px;
+      color: #38bdf8;
+      font-weight: 600;
+      margin-bottom: 25px;
     }
     .hero h1 {
-      font-size: 32px;
-      margin-bottom: 8px;
-      color: #0f172a;
+      font-size: clamp(34px, 5vw, 56px);
+      font-weight: 800;
+      line-height: 1.15;
+      max-width: 850px;
+      margin: 0 auto 20px;
+      letter-spacing: -1.5px;
     }
-    .search-container {
-      background: white;
-      padding: 16px;
-      border-radius: 10px;
-      box-shadow: 0 4px 6px rgba(0,0,0,0.05);
-      max-width: 800px;
-      margin: 20px auto;
-      display: flex;
-      gap: 10px;
-      flex-wrap: wrap;
-    }
-    .search-container input,
-    .search-container select {
-      padding: 10px;
-      border: 1px solid #cbd5e1;
-      border-radius: 6px;
-      flex: 1;
-      min-width: 150px;
-    }
-    .btn-search {
-      background-color: #2563eb;
-      color: white;
-      border: none;
-      padding: 10px 20px;
-      border-radius: 6px;
-      font-weight: bold;
-      cursor: pointer;
+    .hero p {
+      font-size: clamp(16px, 2vw, 19px);
+      color: #94a3b8;
+      max-width: 620px;
+      margin: 0 auto 40px;
+      line-height: 1.6;
     }
 
-    /* 3. GRID OF ITEMS */
-    .section-title {
-      max-width: 1000px;
-      margin: 30px auto 15px;
-      padding: 0 20px;
-    }
-    .grid-container {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-      gap: 25px;
-      max-width: 1000px;
-      margin: 0 auto 50px;
-      padding: 0 20px;
-    }
-    .card {
+    /* ADVANCED SEARCH BOX */
+    .search-card {
       background: white;
-      border: 1px solid #e2e8f0;
+      padding: 12px;
+      border-radius: 16px;
+      box-shadow: 0 20px 40px rgba(0, 0, 0, 0.35);
+      max-width: 850px;
+      margin: 0 auto;
+      display: flex;
+      gap: 12px;
+      align-items: center;
+      flex-wrap: wrap;
+    }
+    .search-group {
+      flex: 1;
+      min-width: 200px;
+      display: flex;
+      align-items: center;
+      padding: 10px 16px;
+      background: #f8fafc;
+      border: 1px solid var(--border);
       border-radius: 10px;
-      padding: 15px;
-      box-shadow: 0 2px 4px rgba(0,0,0,0.04);
+      gap: 10px;
     }
-    .card img {
+    .search-group i {
+      color: var(--text-muted);
+    }
+    .search-group input, .search-group select {
+      border: none;
+      background: transparent;
+      outline: none;
       width: 100%;
-      height: 180px;
-      object-fit: cover;
-      border-radius: 8px;
+      font-size: 14px;
+      font-weight: 600;
+      color: #0f172a;
     }
-    .badge {
-      background-color: #e0f2fe;
-      color: #0369a1;
-      padding: 3px 8px;
-      border-radius: 4px;
-      font-size: 11px;
-      font-weight: bold;
-    }
-    .price {
-      font-size: 18px;
-      color: #16a34a;
-      font-weight: bold;
-      margin: 10px 0;
-    }
-    .rent-btn {
-      background-color: #2563eb;
+    .btn-search {
+      background: var(--primary);
       color: white;
       border: none;
-      padding: 10px;
-      width: 100%;
-      border-radius: 6px;
+      padding: 16px 32px;
+      border-radius: 10px;
+      font-weight: 700;
+      font-size: 15px;
       cursor: pointer;
-      font-weight: bold;
+      transition: background 0.2s;
     }
-    .rent-btn:hover { background-color: #1d4ed8; }
+    .btn-search:hover { background: var(--primary-dark); }
+
+    /* TRUST METRICS STRIP */
+    .trust-strip {
+      display: flex;
+      justify-content: center;
+      gap: 40px;
+      margin-top: 45px;
+      color: #94a3b8;
+      font-size: 13px;
+      flex-wrap: wrap;
+    }
+    .trust-item {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+    .trust-item i { color: #22c55e; }
+
+    /* CATEGORIES SLIDER */
+    .cat-wrapper {
+      max-width: 1180px;
+      margin: -35px auto 40px;
+      padding: 0 20px;
+      position: relative;
+      z-index: 10;
+    }
+    .cat-bar {
+      background: white;
+      border-radius: 16px;
+      padding: 12px 18px;
+      box-shadow: 0 6px 20px rgba(0,0,0,0.06);
+      border: 1px solid var(--border);
+      display: flex;
+      gap: 10px;
+      overflow-x: auto;
+    }
+    .cat-btn {
+      background: transparent;
+      border: 1px solid transparent;
+      padding: 10px 18px;
+      border-radius: 10px;
+      font-size: 14px;
+      font-weight: 600;
+      color: var(--text-muted);
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      white-space: nowrap;
+      transition: all 0.2s;
+    }
+    .cat-btn.active, .cat-btn:hover {
+      background: #eff6ff;
+      color: var(--primary);
+      border-color: #bfdbfe;
+    }
+
+    /* GRID SECTION */
+    .main-section {
+      max-width: 1180px;
+      margin: 0 auto 80px;
+      padding: 0 20px;
+    }
+    .section-head {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-end;
+      margin-bottom: 30px;
+    }
+    .section-head h2 {
+      font-size: 26px;
+      font-weight: 800;
+      letter-spacing: -0.5px;
+    }
+    .section-head p {
+      color: var(--text-muted);
+      font-size: 14px;
+      margin-top: 4px;
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(270px, 1fr));
+      gap: 25px;
+    }
+
+    /* CARD STYLING */
+    .card {
+      background: white;
+      border-radius: var(--radius);
+      border: 1px solid var(--border);
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+      transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+      position: relative;
+    }
+    .card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 15px 30px rgba(0,0,0,0.08);
+      border-color: #cbd5e1;
+    }
+    .card-img-holder {
+      position: relative;
+      width: 100%;
+      height: 200px;
+      overflow: hidden;
+    }
+    .card-img-holder img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.4s;
+    }
+    .card:hover .card-img-holder img {
+      transform: scale(1.05);
+    }
+    .verified-badge {
+      position: absolute;
+      top: 12px;
+      right: 12px;
+      background: rgba(255, 255, 255, 0.95);
+      padding: 4px 10px;
+      border-radius: 50px;
+      font-size: 11px;
+      font-weight: 700;
+      color: #0f172a;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+      display: flex;
+      align-items: center;
+      gap: 4px;
+    }
+    .verified-badge i { color: #2563eb; }
+
+    .card-body {
+      padding: 16px;
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+    }
+    .card-cat {
+      font-size: 11px;
+      font-weight: 700;
+      color: var(--primary);
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      margin-bottom: 6px;
+    }
+    .card-title {
+      font-size: 16px;
+      font-weight: 700;
+      color: #0f172a;
+      margin-bottom: 6px;
+      line-height: 1.3;
+    }
+    .card-location {
+      font-size: 13px;
+      color: var(--text-muted);
+      margin-bottom: 15px;
+      display: flex;
+      align-items: center;
+      gap: 5px;
+    }
+    .card-footer {
+      margin-top: auto;
+      border-top: 1px solid #f1f5f9;
+      padding-top: 14px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .price-tag {
+      font-size: 19px;
+      font-weight: 800;
+      color: #0f172a;
+    }
+    .price-tag span {
+      font-size: 12px;
+      color: var(--text-muted);
+      font-weight: 500;
+    }
+    .btn-rent-card {
+      background: var(--dark);
+      color: white;
+      text-decoration: none;
+      padding: 8px 16px;
+      border-radius: 8px;
+      font-size: 13px;
+      font-weight: 700;
+      transition: background 0.2s;
+    }
+    .btn-rent-card:hover {
+      background: var(--primary);
+    }
+
+    /* ROI EARNINGS CALCULATOR BANNER */
+    .calculator-section {
+      background: linear-gradient(135deg, #2563eb, #1d4ed8);
+      color: white;
+      border-radius: 20px;
+      max-width: 1180px;
+      margin: 40px auto 100px;
+      padding: 50px 6%;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 30px;
+      box-shadow: 0 15px 35px rgba(37, 99, 235, 0.25);
+    }
+    .calc-text h3 {
+      font-size: 30px;
+      font-weight: 800;
+      margin-bottom: 10px;
+    }
+    .calc-text p {
+      font-size: 16px;
+      opacity: 0.9;
+      max-width: 500px;
+      line-height: 1.5;
+    }
+    .calc-cta {
+      background: white;
+      color: #0f172a;
+      padding: 16px 32px;
+      border-radius: 12px;
+      text-decoration: none;
+      font-weight: 800;
+      font-size: 15px;
+      box-shadow: 0 6px 15px rgba(0,0,0,0.15);
+      transition: transform 0.2s;
+    }
+    .calc-cta:hover { transform: scale(1.03); }
+
+    /* FOOTER */
+    footer {
+      background: #090d16;
+      color: #94a3b8;
+      padding: 60px 6% 30px;
+      font-size: 14px;
+    }
+    .footer-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 40px;
+      max-width: 1180px;
+      margin: 0 auto 50px;
+    }
+    .footer-col h4 {
+      color: white;
+      font-size: 16px;
+      margin-bottom: 16px;
+    }
+    .footer-col a {
+      color: #94a3b8;
+      text-decoration: none;
+      display: block;
+      margin-bottom: 10px;
+      transition: color 0.2s;
+    }
+    .footer-col a:hover { color: white; }
+    .bottom-bar {
+      border-top: 1px solid #1e293b;
+      padding-top: 25px;
+      text-align: center;
+      font-size: 13px;
+    }
   </style>
 </head>
 <body>
 
-  <!-- NAVBAR -->
+  <!-- 1. TOP ANNOUNCEMENT -->
+  <div class="top-banner">
+    🛡️ Every rental is protected with up to <span>$5,000 Equipment Deposit Guarantee</span>
+  </div>
+
+  <!-- 2. NAVBAR -->
   <header class="navbar">
-    <a href="index.html" class="logo">Gear<span>Rent</span></a>
-    <a href="form.html" class="btn-post">+ List Your Gear</a>
+    <a href="index.html" class="logo">
+      <i class="fa-solid fa-camera-retro" style="color: #2563eb;"></i>
+      GearRent <span class="logo-badge">PRO</span>
+    </a>
+    <div class="nav-right">
+      <a href="form.html" class="btn-earn"><i class="fa-solid fa-money-bill-wave" style="color: #22c55e;"></i> Earn from Your Gear</a>
+      <a href="form.html" class="btn-primary">+ List Equipment</a>
+    </div>
   </header>
 
-  <!-- SEARCH HERO -->
+  <!-- 3. HERO -->
   <section class="hero">
-    <h1>Don't Buy. Just Rent.</h1>
-    <p>Rent cameras, tools, and electronics from people in your city.</p>
+    <div class="hero-badge">
+      <i class="fa-solid fa-shield-halved"></i> Peer-to-Peer Verified Gear Exchange
+    </div>
+    <h1>Stop Buying Expensive Gear.<br>Rent High-End Equipment Locally.</h1>
+    <p>Rent cinema cameras, 4K drones, wireless audio, and power tools directly from verified creators and owners in your area.</p>
 
-    <div class="search-container">
-      <input type="text" placeholder="What are you looking for?">
-      <select>
-        <option value="">All Categories</option>
-        <option value="cameras">📷 Cameras</option>
-        <option value="drones">🛸 Drones</option>
-        <option value="tools">🔨 Power Tools</option>
-      </select>
-      <input type="text" placeholder="Location">
-      <button class="btn-search">Search</button>
+    <!-- SEARCH BAR -->
+    <div class="search-card">
+      <div class="search-group">
+        <i class="fa-solid fa-magnifying-glass"></i>
+        <input type="text" id="searchInput" placeholder="Search gear (e.g. Sony FX3, Drone, Drill)...">
+      </div>
+      <div class="search-group">
+        <i class="fa-solid fa-location-dot"></i>
+        <input type="text" id="locInput" placeholder="Neighborhood or Town">
+      </div>
+      <button class="btn-search" onclick="runSearch()"><i class="fa-solid fa-bolt"></i> Search</button>
+    </div>
+
+    <!-- SOCIAL PROOF -->
+    <div class="trust-strip">
+      <div class="trust-item"><i class="fa-solid fa-circle-check"></i> 100% ID-Verified Owners</div>
+      <div class="trust-item"><i class="fa-solid fa-circle-check"></i> Direct WhatsApp Booking</div>
+      <div class="trust-item"><i class="fa-solid fa-circle-check"></i> Over 2,400+ Successful Shoots</div>
     </div>
   </section>
 
-  <!-- RENTAL GRID -->
-  <div class="section-title">
-    <h2>Featured Gear Nearby</h2>
+  <!-- 4. CATEGORY FILTER SLIDER -->
+  <div class="cat-wrapper">
+    <div class="cat-bar">
+      <button class="cat-btn active" onclick="filterCat('ALL')"><i class="fa-solid fa-layer-group"></i> All Equipment</button>
+      <button class="cat-btn" onclick="filterCat('CAMERAS')"><i class="fa-solid fa-camera"></i> Cinema & Cameras</button>
+      <button class="cat-btn" onclick="filterCat('DRONES')"><i class="fa-solid fa-helicopter"></i> 4K Drones</button>
+      <button class="cat-btn" onclick="filterCat('TOOLS')"><i class="fa-solid fa-wrench"></i> Power Tools</button>
+      <button class="cat-btn" onclick="filterCat('AUDIO')"><i class="fa-solid fa-microphone-lines"></i> Wireless Audio</button>
+    </div>
   </div>
 
-  <div class="grid-container" id="gearGrid">
-
-    <!-- Card 1 (Default) -->
-    <div class="card">
-      <img src="https://images.unsplash.com/photo-1516035069371-29a1b244cc32?w=500" alt="Camera">
-      <p><span class="badge">CAMERAS</span></p>
-      <h3>Sony A7 IV Camera</h3>
-      <p style="color: #64748b; font-size: 14px;">📍 Downtown</p>
-      <p class="price">$45 <span style="font-size: 12px; color: gray;">/ day</span></p>
-      <a href="details.html"><button class="rent-btn">Rent This Gear</button></a>
+  <!-- 5. MAIN CATALOG -->
+  <main class="main-section">
+    <div class="section-head">
+      <div>
+        <h2>Featured Rentals Near You</h2>
+        <p>Inspected and ready for same-day pick up.</p>
+      </div>
     </div>
 
-    <!-- Card 2 (Default) -->
-    <div class="card">
-      <img src="https://images.unsplash.com/photo-1527977966376-1c8408f9f108?w=500" alt="Drone">
-      <p><span class="badge">DRONES</span></p>
-      <h3>DJI Mini 3 Pro Drone</h3>
-      <p style="color: #64748b; font-size: 14px;">📍 Westlands</p>
-      <p class="price">$35 <span style="font-size: 12px; color: gray;">/ day</span></p>
-      <a href="details.html"><button class="rent-btn">Rent This Gear</button></a>
+    <div class="grid" id="gearGrid">
+      <!-- Default Verified Item 1 -->
+      <div class="card" data-category="CAMERAS" data-name="Sony FX3 Cinema Camera" data-location="Downtown">
+        <div class="card-img-holder">
+          <img src="https://images.unsplash.com/photo-1516035069371-29a1b244cc32?w=600" alt="Camera">
+          <div class="verified-badge"><i class="fa-solid fa-circle-check"></i> Verified Pro</div>
+        </div>
+        <div class="card-body">
+          <div class="card-cat">Cameras & Lenses</div>
+          <h3 class="card-title">Sony Alpha A7 IV Mirrorless</h3>
+          <div class="card-location"><i class="fa-solid fa-location-dot"></i> Downtown • 2.5 km</div>
+          <div class="card-footer">
+            <div class="price-tag">$45 <span>/ day</span></div>
+            <a href="details.html" class="btn-rent-card">Rent Now</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Default Verified Item 2 -->
+      <div class="card" data-category="DRONES" data-name="DJI Mini 3 Pro Drone" data-location="Westlands">
+        <div class="card-img-holder">
+          <img src="https://images.unsplash.com/photo-1527977966376-1c8408f9f108?w=600" alt="Drone">
+          <div class="verified-badge"><i class="fa-solid fa-circle-check"></i> Verified Pro</div>
+        </div>
+        <div class="card-body">
+          <div class="card-cat">Drones</div>
+          <h3 class="card-title">DJI Mini 3 Pro Drone (4K)</h3>
+          <div class="card-location"><i class="fa-solid fa-location-dot"></i> Westlands • 4.1 km</div>
+          <div class="card-footer">
+            <div class="price-tag">$35 <span>/ day</span></div>
+            <a href="details.html" class="btn-rent-card">Rent Now</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Default Verified Item 3 -->
+      <div class="card" data-category="TOOLS" data-name="DeWalt 20V Max Hammer Drill" data-location="Northside">
+        <div class="card-img-holder">
+          <img src="https://images.unsplash.com/photo-1504148455328-c376907d081c?w=600" alt="Drill">
+          <div class="verified-badge"><i class="fa-solid fa-circle-check"></i> Verified Pro</div>
+        </div>
+        <div class="card-body">
+          <div class="card-cat">Power Tools</div>
+          <h3 class="card-title">DeWalt Cordless Drill Kit</h3>
+          <div class="card-location"><i class="fa-solid fa-location-dot"></i> Northside • 1.2 km</div>
+          <div class="card-footer">
+            <div class="price-tag">$15 <span>/ day</span></div>
+            <a href="details.html" class="btn-rent-card">Rent Now</a>
+          </div>
+        </div>
+      </div>
     </div>
+  </main>
 
-    <!-- Card 3 (Default) -->
-    <div class="card">
-      <img src="https://images.unsplash.com/photo-1504148455328-c376907d081c?w=500" alt="Drill">
-      <p><span class="badge">TOOLS</span></p>
-      <h3>DeWalt Cordless Drill</h3>
-      <p style="color: #64748b; font-size: 14px;">📍 Northside</p>
-      <p class="price">$15 <span style="font-size: 12px; color: gray;">/ day</span></p>
-      <a href="details.html"><button class="rent-btn">Rent This Gear</button></a>
+  <!-- 6. OWNER ROI CALCULATOR BANNER -->
+  <section class="calculator-section">
+    <div class="calc-text">
+      <h3>Have equipment sitting on your shelf?</h3>
+      <p>Owners on GearRent earn an average of <strong>$450 – $1,200/month</strong> renting out idle cameras, lenses, and power tools with full deposit protection.</p>
     </div>
+    <a href="form.html" class="calc-cta"><i class="fa-solid fa-calculator"></i> List & Start Earning</a>
+  </section>
 
-  </div>
+  <!-- 7. FOOTER -->
+  <footer>
+    <div class="footer-grid">
+      <div class="footer-col">
+        <h4>GearRent Marketplace</h4>
+        <p style="line-height: 1.6; color: #64748b;">The safest community to rent camera equipment, production gear, and tools directly from verified creators.</p>
+      </div>
+      <div class="footer-col">
+        <h4>Rent Gear</h4>
+        <a href="#">Cinema Cameras</a>
+        <a href="#">Drones & Gimbals</a>
+        <a href="#">Audio & Microphones</a>
+        <a href="#">Power Tools</a>
+      </div>
+      <div class="footer-col">
+        <h4>Trust & Legal</h4>
+        <a href="#">Damage Deposit Policy</a>
+        <a href="#">Owner Insurance Policy</a>
+        <a href="#">Identity Verification</a>
+        <a href="#">Terms of Service</a>
+      </div>
+      <div class="footer-col">
+        <h4>Contact</h4>
+        <a href="https://wa.me/1234567890">Direct WhatsApp Support</a>
+        <a href="mailto:support@gearrent.com">support@gearrent.com</a>
+      </div>
+    </div>
+    <div class="bottom-bar">
+      &copy; 2026 GearRent Inc. All rights reserved. Built with pride.
+    </div>
+  </footer>
 
-  <!-- JAVASCRIPT LOGIC -->
+  <!-- SCRIPT ENGINE -->
   <script>
-    window.addEventListener('DOMContentLoaded', () => {
-      const grid = document.getElementById('gearGrid');
-      const savedItems = JSON.parse(localStorage.getItem('myGearList')) || [];
+    // 1. Fetch user-added listings from localStorage
+    const grid = document.getElementById('gearGrid');
+    const saved = JSON.parse(localStorage.getItem('myGearList')) || [];
 
-      console.log('Saved items in memory:', savedItems);
+    saved.forEach(item => {
+      const card = document.createElement('div');
+      card.className = 'card';
+      card.setAttribute('data-category', (item.category || 'CAMERAS').toUpperCase());
+      card.setAttribute('data-name', item.name);
+      card.setAttribute('data-location', item.location);
 
-      savedItems.forEach(item => {
-        const newCard = document.createElement('div');
-        newCard.className = 'card';
-        newCard.innerHTML = `
+      card.innerHTML = `
+        <div class="card-img-holder">
           <img src="${item.image}" alt="${item.name}">
-          <p><span class="badge">${item.category}</span></p>
-          <h3>${item.name}</h3>
-          <p style="color: #64748b; font-size: 14px;">📍 ${item.location}</p>
-          <p class="price">$${item.price} <span style="font-size: 12px; color: gray;">/ day</span></p>
-          <a href="details.html"><button class="rent-btn">Rent This Gear</button></a>
-        `;
-        grid.prepend(newCard);
+          <div class="verified-badge"><i class="fa-solid fa-sparkles" style="color: #eab308;"></i> Community Member</div>
+        </div>
+        <div class="card-body">
+          <div class="card-cat">${item.category}</div>
+          <h3 class="card-title">${item.name}</h3>
+          <div class="card-location"><i class="fa-solid fa-location-dot"></i> ${item.location}</div>
+          <div class="card-footer">
+            <div class="price-tag">$${item.price} <span>/ day</span></div>
+            <a href="details.html" class="btn-rent-card">Rent Now</a>
+          </div>
+        </div>
+      `;
+      grid.prepend(card);
+    });
+
+    // 2. Category Filter Switcher
+    function filterCat(cat) {
+      document.querySelectorAll('.cat-btn').forEach(b => b.classList.remove('active'));
+      event.target.classList.add('active');
+
+      document.querySelectorAll('.card').forEach(card => {
+        const itemCat = card.getAttribute('data-category');
+        if (cat === 'ALL' || itemCat === cat) {
+          card.style.display = 'flex';
+        } else {
+          card.style.display = 'none';
+        }
+      });
+    }
+
+    // 3. Search Bar Live Filter
+    document.getElementById('searchInput').addEventListener('input', function(e) {
+      const q = e.target.value.toLowerCase();
+      document.querySelectorAll('.card').forEach(card => {
+        const name = (card.getAttribute('data-name') || '').toLowerCase();
+        if (name.includes(q)) {
+          card.style.display = 'flex';
+        } else {
+          card.style.display = 'none';
+        }
       });
     });
   </script>
